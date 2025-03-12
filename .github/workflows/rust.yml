@@ -87,7 +87,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: unitypackage_util.exe
-          path: unitypackage_util-windows-x86_64/release/
+          path: target/release/
 
   build-linux:
     runs-on: ubuntu-20.04
