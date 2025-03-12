@@ -76,18 +76,18 @@ jobs:
         shell: bash
 
       - name: Release
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/download-artifact@v4
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
             unitypackage_util-windows-x86_64.zip
-            unitypackage_util-windows-x86_64/unitypackage_util-License.txt
+            # unitypackage_util-windows-x86_64/unitypackage_util-License.txt
 
       - name: unitypackage_util-windows-x86_64
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: unitypackage_util-windows-x86_64
-          path: unitypackage_util-windows-x86_64/*
+          path: /*
 
   build-linux:
     runs-on: ubuntu-20.04
